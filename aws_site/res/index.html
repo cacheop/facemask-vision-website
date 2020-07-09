@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-172173697-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-172173697-1');
+	</script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Facemask detection using computer vision, tensorflow">
+    <meta name="author" content="Alberto Escarlate">
+
+    <title>Facemask detector</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="res/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="res/device-mockups/device-mockups.min.css">
+
+    <!-- Custom styles for this template -->
+    <link href="res/css/new-age.min.css" rel="stylesheet">
+</head>
+
+<body id="page-top">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">AI FACE MASK DETECTOR</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+              Menu
+              <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                   <li class="nav-item">
+                       <a class="nav-link js-scroll-trigger" href="#demo">Demo</a>
+                   </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#subscribe" onclick="ga('send', 'event', 'Landing-Page', 'subscribe', 'top-button');">More info</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="#contact">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="masthead">
+        <div class="container h-100">
+            <div class="row h-100">
+                <div class="col-lg-7 my-auto">
+                    <div class="header-content mx-auto">
+                        <h1 class="mb-5">Detect automatically face mask usage with a trained neural network </h2>
+						
+                        <a href="#subscribe" class="btn btn-outline btn-xl js-scroll-trigger" onclick="ga('send', 'event', 'Landing-Page', 'subscribe', 'main-button');">More info</a>
+                    </div>
+                </div>
+                <div class="col-lg-5 my-auto">
+                    <div class="device-container">
+                        <div class="device-mockup iphone6_plus portrait white">
+                            <div class="device">
+                                <div class="screen">
+                                    <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
+                                    <img src="res/img/demo-screen-1.jpg" class="img-fluid" alt="">
+                                </div>
+                                <div class="button">
+                                    <!-- You can hook the "home button" to some JavaScript events or just remove it -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="cta bg-light" >
+            <div class="container">
+				<div class="embed-responsive embed-responsive-16by9" id="demo">
+				  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/sjvnXRxHf7Y" allowfullscreen></iframe>
+				</div>
+            </div>
+    </section>
+    <section class="subscribe   text-center" id="subscribe">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                    <div class="card card-signin my-5">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Stay in touch</h5>
+                            <form class="form-signin" method="post" action="/submit" onsubmit="ga('send', 'event', 'Landing-Page', 'submit-subscribe'); fbq('track', 'Contact'); return true;">
+                                <div class="form-label-group">
+                                    <input type="text" name="inputName" id="inputName" class="form-control" placeholder="Name" required >
+                                    <label for="inputName">Name</label>
+                                </div>
+                                <div class="form-label-group">
+                                    <input type="email" name="inputEmail" id="inputEmail" class="form-control" placeholder="Email address" required >
+                                    <label for="inputEmail">Email address</label>
+                                </div>
+
+                                <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Join The List</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="contact bg-primary" id="contact">
+        <div class="container">
+            <ul class="list-inline list-social">
+                <li class="list-inline-item ">
+                    <a href="http://www.twitter.com/cacheop">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="https://www.linkedin.com/in/albertoescarlate/">
+                    <i class="fab fa-linkedin"></i>
+                  </a>
+                </li>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; Facemask.vision. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="res/vendor/jquery/jquery.min.js"></script>
+    <script src="res/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="res/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="res/js/new-age.min.js"></script>
+</body>
+</html>
